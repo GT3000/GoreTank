@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     private void ChangeScore(int score)
     {
         currentScore += score;
+        SaveScore(currentScore);
         GameEvents.ScoreUpdate(currentScore);
     }
     

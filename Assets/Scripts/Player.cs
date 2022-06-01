@@ -137,8 +137,9 @@ public class Player : MonoBehaviour
             if (deathDecal != null)
             {
                 Vector3 fixedRotation = new Vector3(0, 90, -90);
+                Vector3 correctedTransform = new Vector3(transform.position.x, transform.position.y, -1);
                 
-                GameObject decal = Instantiate(deathDecal, (Vector2)transform.position, Quaternion.identity);
+                GameObject decal = Instantiate(deathDecal, correctedTransform, Quaternion.identity);
                 decal.transform.eulerAngles = fixedRotation;
                 decal.transform.localScale *= decalScale;
             }
@@ -148,7 +149,8 @@ public class Player : MonoBehaviour
             turret.gameObject.SetActive(false);
 
             GetComponent<Animator>().enabled = false;
-
+            
+            GameEvents.CameraShake(0.5f, 4.0f, 1.0f);
         }
     }
 
@@ -158,6 +160,7 @@ public class Player : MonoBehaviour
         {
             SubtractFuel(primaryWeaponFuelCost);
             GameEvents.PlaySfx(cannonSfx);
+            GameEvents.CameraShake(0.5f, 2.0f, 1.0f);
 
             GameObject tempPrimaryShot = Instantiate(primaryProjectile, primaryFirePoint.position, Quaternion.identity);
             tempPrimaryShot.transform.parent = projectileParent.transform;
@@ -173,6 +176,7 @@ public class Player : MonoBehaviour
         {
             SubtractFuel(secondaryWeaponFuelCost);
             GameEvents.PlaySfx(mgSfx);
+            GameEvents.CameraShake(0.2f, 0.5f, 1.0f);
             
             GameObject tempSecondaryShot = Instantiate(secondaryProjectile, secondaryFirePoint.position, Quaternion.identity);
             tempSecondaryShot.transform.parent = projectileParent.transform;

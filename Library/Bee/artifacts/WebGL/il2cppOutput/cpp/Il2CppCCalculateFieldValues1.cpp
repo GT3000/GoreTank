@@ -60,6 +60,8 @@ struct Action_2_t4195ED8D681728C29103F36BCD591C0F089C9132;
 struct Action_2_t39F9A40857E06142231322CA3632F32C6926572A;
 // System.Action`2<System.String,System.Boolean>
 struct Action_2_t79388C33CD9A9EDFE5BE17BE73F59AB95415B00A;
+// System.Action`3<System.Single,System.Single,System.Single>
+struct Action_3_tF90A37B94256820313F23F3DF74A70B0A814E93E;
 // System.Action`3<System.String,System.Boolean,UnityEngine.Profiling.Experimental.DebugScreenCapture>
 struct Action_3_t3460E367BC4ED87D276FBFEBF9F351031F43B89C;
 // System.Action`3<UnityEngine.Timeline.TimelineClip,UnityEngine.GameObject,UnityEngine.Playables.Playable>
@@ -1032,6 +1034,8 @@ struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17;
 struct Character_t9B671B493FAC8D43638C69AF6AE92CBD103D80EC;
 // UnityEngine.CharacterController
 struct CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A;
+// Cinemachine.CinemachineBasicMultiChannelPerlin
+struct CinemachineBasicMultiChannelPerlin_tDAA09E3E93032C713228E84CA33B21293E9A9269;
 // Cinemachine.CinemachineBlend
 struct CinemachineBlend_t727AC6579F9C674EB8E01FC3ACB846B20786FF5E;
 // Cinemachine.CinemachineBlenderSettings
@@ -3448,6 +3452,8 @@ struct GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___SavePlayerPrefs_15;
 	// System.Action GameEvents::ClearScores
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___ClearScores_16;
+	// System.Action`3<System.Single,System.Single,System.Single> GameEvents::CameraShake
+	Action_3_tF90A37B94256820313F23F3DF74A70B0A814E93E* ___CameraShake_17;
 };
 
 // UnityEngine.UI.GraphicRegistry
@@ -32482,16 +32488,18 @@ struct BoxCollider2D_tF860C7737FFB062CEC06577E0CD8364EEC1D4EDA  : public Collide
 // CameraShake
 struct CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// UnityEngine.Transform CameraShake::camTransform
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___camTransform_4;
-	// System.Single CameraShake::shakeDuration
-	float ___shakeDuration_5;
-	// System.Single CameraShake::shakeAmount
-	float ___shakeAmount_6;
-	// System.Single CameraShake::decreaseFactor
-	float ___decreaseFactor_7;
-	// UnityEngine.Vector2 CameraShake::originalPos
-	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___originalPos_8;
+	// System.Single CameraShake::currentAmp
+	float ___currentAmp_4;
+	// System.Single CameraShake::currentduration
+	float ___currentduration_5;
+	// System.Single CameraShake::currentFrequency
+	float ___currentFrequency_6;
+	// System.Single CameraShake::elapsedTime
+	float ___elapsedTime_7;
+	// Cinemachine.CinemachineVirtualCamera CameraShake::virtualCam
+	CinemachineVirtualCamera_t7BAD867E24FA315D28917EE318CE7D7258C4CD50* ___virtualCam_8;
+	// Cinemachine.CinemachineBasicMultiChannelPerlin CameraShake::virualCamNoise
+	CinemachineBasicMultiChannelPerlin_tDAA09E3E93032C713228E84CA33B21293E9A9269* ___virualCamNoise_9;
 };
 
 // Cinemachine.CinemachineBrain
@@ -42587,9 +42595,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5170[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5171[8] = 
 {
 	static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___mainMenuBGM_4)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___gameBGM_5)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___currentMusicVolume_6)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___defaultMusicVolume_7)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___audioSource_8)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___currentSfxVolume_9)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___defaultSfxVolume_10)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___sfxAudioSource_11)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5172[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5172[6] = 
 {
-	static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___camTransform_4)),static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___shakeDuration_5)),static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___shakeAmount_6)),static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___decreaseFactor_7)),static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___originalPos_8)),};
+	static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___currentAmp_4)),static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___currentduration_5)),static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___currentFrequency_6)),static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___elapsedTime_7)),static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___virtualCam_8)),static_cast<int32_t>(offsetof(CameraShake_tAC55122F42E0B2A0581731E4C9799A5A8A0D7CA1, ___virualCamNoise_9)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5173[5] = 
 {
 	static_cast<int32_t>(offsetof(EnemyType_t03DA94B0DF10A2D83B2BF1A4A8B59E2C86AAE48E, ___value___2)) + static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,0,};
@@ -42602,9 +42610,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5175[15] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5176[1] = 
 {
 	static_cast<int32_t>(offsetof(FX_tEE0F0129E90210865E9C1EE9497AFD6DAD025B88, ___currentTime_4)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5177[17] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5177[18] = 
 {
-	static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___AddFuel_0)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___SubtractFuel_1)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___SetFuel_2)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___ScoreUpdate_3)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___ChangeScore_4)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___GetBestScore_5)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___EnemyKilled_6)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___PlayerKilled_7)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___PauseMenu_8)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___Restart_9)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___Quit_10)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___PlaySfx_11)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___SetOptionsSliders_12)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___UpdateMusicVolume_13)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___UpdateSfxVolume_14)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___SavePlayerPrefs_15)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___ClearScores_16)),};
+	static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___AddFuel_0)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___SubtractFuel_1)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___SetFuel_2)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___ScoreUpdate_3)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___ChangeScore_4)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___GetBestScore_5)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___EnemyKilled_6)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___PlayerKilled_7)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___PauseMenu_8)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___Restart_9)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___Quit_10)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___PlaySfx_11)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___SetOptionsSliders_12)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___UpdateMusicVolume_13)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___UpdateSfxVolume_14)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___SavePlayerPrefs_15)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___ClearScores_16)),static_cast<int32_t>(offsetof(GameEvents_t5451171BFB5DAE3FAF293BF6F54056213C0610B0_StaticFields, ___CameraShake_17)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5178[2] = 
 {
 	static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___currentScore_4)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___bestScore_5)),};

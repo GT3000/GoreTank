@@ -59,6 +59,7 @@ public class Enemy : MonoBehaviour
             if (crushable && !isDead)
             {
                 TakeDamage(col.gameObject.GetComponentInParent<Player>().CollisionDamage);
+                GameEvents.CameraShake(0.5f, 1.5f, 1.0f);
             }
         }
     }
@@ -70,6 +71,7 @@ public class Enemy : MonoBehaviour
             if (crushable && !isDead)
             {
                 TakeDamage(col.gameObject.GetComponentInParent<Player>().CollisionDamage);
+                GameEvents.CameraShake(0.5f, 1.5f, 1.0f);
             }
         }
     }
@@ -122,8 +124,9 @@ public class Enemy : MonoBehaviour
         {
             int randomDecal = Random.Range(0, deathDecals.Count);
             Vector3 randomRotation = new Vector3(Random.Range(0, 360), 90, -90);
+            Vector3 correctedTransform = new Vector3(transform.position.x, transform.position.y, -1);
             
-            GameObject decal = Instantiate(deathDecals[randomDecal], (Vector2)transform.position, Quaternion.identity);
+            GameObject decal = Instantiate(deathDecals[randomDecal], correctedTransform, Quaternion.identity);
             decal.transform.eulerAngles = randomRotation;
             decal.transform.localScale *= decalScale;
         }

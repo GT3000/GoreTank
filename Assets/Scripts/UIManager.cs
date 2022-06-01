@@ -103,6 +103,7 @@ public class UIManager : MonoBehaviour
 
     private void PauseMenu()
     {
+        
         highScoreText.text = PlayerPrefs.GetInt("BestScore").ToString();
         
         if (pauseMenu.activeInHierarchy)

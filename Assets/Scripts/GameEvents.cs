@@ -20,4 +20,5 @@ public static class GameEvents
     public static Action<float> UpdateSfxVolume;
     public static Action SavePlayerPrefs;
     public static Action ClearScores;
+    public static Action<float, float, float> CameraShake;
 }
